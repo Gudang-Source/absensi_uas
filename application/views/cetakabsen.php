@@ -76,7 +76,13 @@ function tgl_indo($tanggal){
         <form method="POST" action="<?php echo base_URL('absen'); ?>">
           <div class="col-xs-12">
           <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-          Pilih Tingkatan : <select name="tingkata" class="form-control" id="tingkata"><option value=" ">Pilih Tingkatan</option><option value="X">X</option><option value="XI">XI</option><option value="XII">XII</option></select>
+          Pilih Tingkatan : <select name="tingkata" class="form-control" id="tingkata"><?php 
+                                                    $dgg = $this->db->query("select tingkatan from siswa group by tingkatan")->result();
+                                                    foreach ($dgg as $kee) {
+                                                  ?>
+                                                  <option value="<?php echo $kee->tingkatan; ?>"><?php echo $kee->tingkatan; ?></option>
+                                                  <?php } ?>
+                                                </select>
           </div>
           <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
           Pilih Mapel : <select name="mapel" class="mapel form-control" id="mapel"></select>

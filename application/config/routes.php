@@ -50,9 +50,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'loginaplikasi';
-$route['adminpanel']='admin/loginaplikasi';
-$route['artikel']='blog';
-$route['artikel']='blog/index';
-$route['artikel/(:any)']='blog/detail/$1';
-$route['404_override'] = 'error';
+$route['satpam']='satpam';
+$route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

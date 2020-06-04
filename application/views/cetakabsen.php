@@ -73,7 +73,7 @@ function tgl_indo($tanggal){
             <div class="box-header">
             </div>
         <div class="row">
-        <form method="POST" action="<?php echo base_URL('absen'); ?>">
+        <form method="get" action="<?php echo base_URL('absen'); ?>">
           <div class="col-xs-12">
           <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
           Pilih Tingkatan : <select name="tingkata" class="form-control" id="tingkata"><?php 

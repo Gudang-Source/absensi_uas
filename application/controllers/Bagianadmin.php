@@ -13,6 +13,7 @@ class Bagianadmin extends CI_Controller {
 
 	public function index()
 	{
+        date_default_timezone_set('Asia/Jakarta');
         $tgl = date("Y-m-d");
         $tma = date("H:i:s");
         $data['map'] = $this->db->query("select*from soal where tanggal_uji='$tgl' AND waktu_awal <= '$tma' AND waktu_akhir >= '$tma'");

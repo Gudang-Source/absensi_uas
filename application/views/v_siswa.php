@@ -146,7 +146,7 @@ date_default_timezone_set('Asia/Jakarta');
                             }
                             foreach ($a as $df) {
                             if($tma >= $df->waktu_awal && $tma < $df->waktu_akhir) {
-                                 echo '<input type="radio" name="KodeSoal" class="radioClass" value="'.$df->KodeSoal.'" required /> '.$df->NamaSoal;
+                                 echo '<input type="radio" name="KodeSoal" class="radioClass" value="'.$df->KodeSoal.'" required /> '.$df->NamaSoal.'<br/>';
                              }
                             } 
                             ?>

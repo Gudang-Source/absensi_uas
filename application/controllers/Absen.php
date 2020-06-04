@@ -12,8 +12,8 @@ class Absen extends CI_Controller {
 
     public function index()
     {
-        $pos = $this->input->post();
-        if(empty($this->input->post('mapel') && $this->input->post('kelas'))) {
+        $pos = $this->input->get();
+        if(empty($this->input->get('mapel') && $this->input->get('kelas'))) {
         $data['soa'] = "";
         $data['sudah'] = "";
         $data['map'] = $this->db->query("select*from soal where KodeSoal='a' ");
@@ -22,7 +22,7 @@ class Absen extends CI_Controller {
         $data['map'] = $this->db->query("select*from soal where KodeSoal='".$pos['mapel']."'");
         $data['soa'] = $this->db->query('select*from siswa where siswa.kelas="'.$pos['kelas'].'" AND NOT EXISTS(SELECT * FROM absensi WHERE absensi.KodeSoal="'.$pos['mapel'].'" AND siswa.no_peserta = absensi.IDSiswa)');
         $data['sudah'] = $this->db->query("select*from absensi,siswa where absensi.IDSiswa=siswa.no_peserta AND siswa.kelas='".$pos['kelas']."' AND absensi.KodeSoal='".$pos['mapel']."' order by siswa.IDSiswa ASC");
-        $data['kela'] = $this->input->post('kelas');
+        $data['kela'] = $this->input->get('kelas');
         }
         $this->load->view('cetakabsen', $data);
     }

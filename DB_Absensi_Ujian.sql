@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `absensi` (
   `IDAbsensi` int(5) NOT NULL,
   `KodeSoal` int(5) NOT NULL,
-  `IDSiswa` char(5) NOT NULL,
+  `IDSiswa` char(25) NOT NULL,
   `TanggalMengerjakan` date DEFAULT NULL,
   `Jam` time NOT NULL,
   `jurusan` varchar(15) NOT NULL,
@@ -81,7 +81,7 @@ CREATE TABLE `siswa` (
   `nama_siswa` varchar(256) NOT NULL,
   `jk` varchar(2) NOT NULL,
   `kelas` varchar(15) NOT NULL,
-  `tingkatan` varchar(2) NOT NULL,
+  `tingkatan` varchar(3) NOT NULL,
   `jurusan` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -98,8 +98,8 @@ CREATE TABLE `soal` (
   `waktu_awal` time NOT NULL,
   `waktu_akhir` time NOT NULL,
   `tanggal_uji` date NOT NULL,
-  `tingkatan` varchar(2) NOT NULL,
-  `jurusan` varchar(12) NOT NULL
+  `tingkatan` varchar(3) NOT NULL,
+  `jurusan` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
